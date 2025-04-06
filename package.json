@@ -23,6 +23,7 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
+    "@types/qrcode": "^1.5.5",
     "typescript": "^5.8.3"
   }
 }
