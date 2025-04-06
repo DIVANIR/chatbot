@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && copyfiles src/firebase/serviceAccountKey.json dist/firebase",
+    "build": "tsc && copyfiles src/firebase/serviceAccountKey.json dist/src/firebase",
     "start": "node dist/src/index.js",
     "dev": "ts-node src/index.ts"
   },
