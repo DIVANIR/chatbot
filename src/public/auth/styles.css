@@ -1,0 +1,59 @@
+a {
+    margin: auto;
+    text-align: center;
+    display: block;
+    padding: 16px;
+    width: 100%;
+}
+
+.message:not(:empty) {
+    padding: 8px;
+    border: crimson 2px solid;
+    color: crimson;
+    border-radius: 8px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #3333336b;
+    display: none;
+
+}
+
+.loading::after {
+    content: "";
+    position: relative;
+    top: calc(50% - 20px);
+    left: calc(50% - 20px);
+    width: 40px;
+    height: 40px;
+    border: #fff solid 5px;
+    border-radius: 50%;
+    display: block;
+    border-right-color: transparent;
+    animation: loading infinite 1s linear;
+}
+
+.input-group {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    cursor: pointer;
+    user-select: none;
+}
+
+@keyframes loading {
+    100% {
+        transform: rotate(360deg);
+    }
+}

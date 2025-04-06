@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot de Atendimento para WhatsApp - Automatize Sua Pizzaria</title>
+
+    <!-- Meta Descrição (Até 160 caracteres) -->
+    <meta name="description"
+        content="Automatize o atendimento da sua pizzaria com nosso bot para WhatsApp. Agilize pedidos, aumente vendas e melhore a experiência dos clientes. Experimente grátis!">
+
+    <!-- Palavras-Chave (Opcional, mas útil) -->
+    <meta name="keywords"
+        content="bot whatsapp, atendimento automático, pizzaria, automação, whatsapp business, aumentar vendas, chatbot">
+
+    <!-- Autor (Opcional) -->
+    <meta name="author" content="Divanir de Jesus Silva">
+
+    <!-- Open Graph (Para Redes Sociais) -->
+    <meta property="og:title" content="Bot de Atendimento para WhatsApp - Automatize Sua Pizzaria">
+    <meta property="og:description"
+        content="Automatize o atendimento da sua pizzaria com nosso bot para WhatsApp. Agilize pedidos, aumente vendas e melhore a experiência dos clientes. Experimente grátis!">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:url" content="https://www.seusite.com">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card (Para Twitter) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Bot de Atendimento para WhatsApp - Automatize Sua Pizzaria">
+    <meta name="twitter:description"
+        content="Automatize o atendimento da sua pizzaria com nosso bot para WhatsApp. Agilize pedidos, aumente vendas e melhore a experiência dos clientes. Experimente grátis!">
+    <meta name="twitter:image" content="img/logo.png">
+
+    <!-- Canonical URL (Evitar Conteúdo Duplicado) -->
+    <link rel="canonical" href="https://www.seusite.com">
+
+    <!-- Favicon (Ícone do Site) -->
+    <link rel="icon" type="image/png" href="img/logo.png">
+
+    <!-- Robots (Controle de Indexação) -->
+    <meta name="robots" content="index, follow">   
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- <input type="checkbox"/> -->
+    <header>
+        <h1>WhatsBotRobot</h1>
+        <p>O chatbot inteligente que transforma a comunicação da sua empresa</p>
+    </header>
+    <div class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <h2>Automatize suas conversas com IA</h2>
+                <p>O WhatsBotRobot é a solução perfeita para empresas que desejam melhorar o atendimento ao cliente,
+                    aumentar a produtividade e engajar seus usuários de forma inteligente.</p>
+                <a href="/auth/signin" class="cta-button">Experimente Grátis</a>
+            </div>
+            <div class="hero-medias">
+                <img src="./img/logo.webp"/>
+                <video width="100%" loading="lazy" autoplay loop muted>
+                    <source src="/img/chat.mp4" type="video/mp4">
+                    <source src="/img/chat.webm" type="video/webm">
+                    Chatbot em ação
+                </video>
+            </div>
+        </section>
+        <section class="features">
+            <div class="feature">
+                <img src="/img/service.webp" alt="Ícone de Atendimento">
+                <div><h3>Atendimento 24/7</h3></div>
+                <p>Seu cliente nunca mais ficará sem resposta. Nosso chatbot está sempre disponível.</p>
+            </div>
+            <div class="feature">
+                <img src="/img/solution.webp" alt="Ícone de Integração">
+                <div><h3>Integração Fácil</h3></div>
+                <p>Integre o WhatsBotRobot ao WhatsApp, site e outras plataformas em minutos.</p>
+            </div>
+            <div class="feature">
+                <img src="/img/coaching.webp" alt="Ícone de Personalização">
+                <div><h3>Personalização Total</h3></div>
+                <p>Adapte o chatbot às necessidades da sua empresa com respostas personalizadas.</p>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2023 WhatsBotRobot. Todos os direitos reservados.</p>
+    </footer>
+    <script type="module">
+        import initialize from './firebase/initialize.js'
+        initialize()
+        document.querySelector('input[type="checkbox"]').addEventListener('change', ({target}) => {
+            const theme = target.checked ? 'dark' : 'light'
+            document.documentElement.setAttribute('data-theme', theme)
+        })
+    </script>
+</body>
+
+</html>

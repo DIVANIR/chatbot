@@ -1,0 +1,113 @@
+:root {
+    --primary-color: #6200ea;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --secondary-color: #2b7cf5;
+    --border-color: #444444;
+}
+
+* {
+    transition: all .1s;
+    color: var(--text-color);
+}
+
+:root[data-theme="dark"] {
+    --primary-color: #6200ea;
+    --background-color: #333333;
+    --text-color: #e0e0e0;
+    --secondary-color: #2b7cf5;
+    --border-color: #e0e0e0;
+}
+
+.loading {
+    width: 50px;
+    height: 50px;
+    border: 8px solid var(--primary-color);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: loading .8s infinite linear;
+}
+
+.cards {
+    display: flex;
+    max-width: 90vw;
+    border-radius: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    overflow-y: auto;
+    max-height: calc(80dvh)
+}
+
+.plan-card {
+    display: flex;
+    max-width: 90vw;
+    border: 1px solid var(--border-color);
+    background-color: #fff5;
+    border-radius: 8px;
+    flex-direction: column;
+    padding: 12px;
+}
+
+.button,
+button {
+    padding: 8px;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 1px 1px 4px 0px var(--text-color);
+    color: var(--text-color);
+    transition: all .1s;
+}
+
+.button:hover,
+button:hover {
+    box-shadow: -1px -1px 1px 1px var(--text-color);
+}
+
+
+.button.primary,
+button.primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+
+.button.close,
+button.close {
+    background-color: crimson;
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: 'x';
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 0;
+    border-start-end-radius: 8px;
+}
+
+
+.button:active,
+button:active {
+    background-color: var(--secondary-color)
+}
+
+@keyframes loading {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Defina as variáveis de cores para o tema dark */
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+        --primary-color: #6200ea;
+        --background-color: #333333;
+        --text-color: #e0e0e0;
+        --secondary-color: #2b7cf5;
+        --border-color: #e0e0e0;
+        
+    }
+}
+

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../main.css">
+    <script src="https://kit.fontawesome.com/1366979560.js" crossorigin="anonymous"></script>
+    <title>Assistente</title>
+    <link rel="icon" type="image/png" href="../img/logo.png">
+</head>
+
+<body>
+    <aside class="connect-container">
+        <div style="position: absolute; left: 28px;">
+            <a href="/"><img src="../img/logo.png" alt="Robozinho" width="50"></a>
+        </div>
+        <div>
+            <div class="connect">
+                <button id="connect-zap">Conectar<i class="fa-brands fa-whatsapp"></i></button>
+            </div>
+            <span id="status-zap" class="nothing">Status: </span>
+        </div>
+        <img id="base64Qrimg" alt="imagem de QR-Code">
+        <div class="profile">
+            <img id="profile-pic" alt="Imagem de perfil" src="https://ui-avatars.com/api/?name=A">
+            <span id="profile-name">_</span>
+            <ul>
+                <li><button id="setting">Configurações<i class="fas fa-cog"></i></button></li>
+                <li><button id="signout">Sair<i class="fa fa-sign-out" aria-hidden="true"></i></button></li>
+            </ul>
+        </div>
+    </aside>
+    <main>
+        <table>
+            <!--caption>Pedidos</caption-->
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Data</th>
+                    <th>Cliente</th>
+                    <th>Descrição do Pedido</th>
+                    <th>Valor</th>
+                    <th>Status</th>
+                    <th>Pagamento</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="8">
+                        <div
+                            style="display: flex; width: 100%; height:200px; justify-content: center; align-items: center;">
+                            Os pedidos aparecerão aqui...
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="7">
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </main>
+    <div class="modal-setting">
+        <div class="setting">
+            <h2 style="margin: 0;">Complete seus Dados para Começar</h2>
+            <p style="margin: 8px;">Preencha as informações abaixo para configurar sua loja no sistema:</p>
+            <div style="display: flex; gap: 4px;">
+                <div class="wrap-label" style="flex: 1;">
+                    <label for="cgc">CNPJ</label>
+                    <input type="number" id="cgc" autocomplete="cc-number" maxlength="14"
+                        placeholder="Digite o cnpj (Opcional)">
+                </div>
+                <div class="wrap-label" style="flex: 2.5;">
+                    <label for="company-name">Nome Loja</label>
+                    <input type="text" id="company-name" autocomplete="cc-given-name"
+                        placeholder="Digite o nome da sua loja">
+                </div>
+            </div>
+            <div class="wrap-label">
+                <label for="company-address">Endereço</label>
+                <input type="text" id="company-address" autocomplete="address-level1"
+                    placeholder="para os clientes que quiserem buscar o pedido na loja" inp>
+            </div>
+            <div style="display: flex; gap: 4px;">
+                <div class="wrap-label" style="flex: 1;">
+                    <label style="white-space: nowrap;" for="estimated-time">Entrega(Em minutos)</label>
+                    <input type="number" id="estimated-time" value="45">
+                </div>
+                <div class="wrap-label" style="flex:1;">
+                    <label style="white-space: nowrap;" for="delivery-fee">Taxa de entrega</label>
+                    <input type="number" id="delivery-fee" value="5.00">
+                </div>
+                <div class="wrap-label" style="flex:1;">
+                    <label style="white-space: nowrap;" for="typeStore">Tipo</label>
+                    <input id="typeStore" list="type">
+                    <datalist id="type">
+                        <option value="Restaurante">
+                        <option value="Doceria">
+                        <option value="Pizzaria">
+                        <option value="Lanchonete">
+                        <option value="Sorveteria">
+                        <option value="Cafeteria">
+                        <option value="Padaria">
+                        <option value="Farmácia">
+                    </datalist>
+                </div>
+                <div class="wrap-label" style="flex:1; display: flex; justify-content: end;">
+                    <button id="add-product" style="background: blueviolet; color: #fff;">Adicionar</br>Produto</button>                   
+                </div>
+            </div>
+            <div class="wrap-label">
+                <fieldset>
+                    <legend>Métodos de pagamento<span style="color: gray;">(Apenas para informar ao cliente)</span>
+                    </legend>
+                    <div>
+                        <input type="checkbox" id="company-payment-method-dinheiro" checked>
+                        <label for="company-payment-method-dinheiro">Dinheiro</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="company-payment-method-credito_debito" checked>
+                        <label for="company-payment-method-credito_debito">Credito/Debito</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="company-payment-method-pix" checked>
+                        <label for="company-payment-method-pix">Pix</label>
+                        <input type="text" id="key-pix" placeholder="Chave pix (será enviada para o cliente)">
+                    </div>
+                </fieldset>
+                <button id="save-setting">Salvar</button>
+            </div>
+            <div class="list-products">
+                <h2>Produtos</h2>
+                <div style="display: flex;">
+                    <div>
+                        <div style="display: flex;">
+                            <input type="text" id="product-name" placeholder="Nome do produto">
+                            <input type="number" id="product-price" placeholder="Preço">
+                        </div>
+                        <textarea style="width: 100%;" id="product-description" placeholder="Descrição do produto"></textarea>
+                    </div>
+                    <button id="add-product-in-list">Add</button>
+                </div>
+                <hr>
+                <ul style="max-height: 70dvh; overflow: auto;">
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script type="module" src="script.js"></script>
+
+
+</body>
+
+</html>

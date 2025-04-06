@@ -1,0 +1,15 @@
+2025/02/23-10:05:40.170 3350 Reusing MANIFEST C:\Users\divan\Documents\chatCompletion\tokens\DiPizza2\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2025/02/23-10:05:40.171 3350 Recovering log #132
+2025/02/23-10:05:40.186 3350 Reusing old log C:\Users\divan\Documents\chatCompletion\tokens\DiPizza2\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000132.log 
+2025/02/23-10:05:41.799 25fc Level-0 table #138: started
+2025/02/23-10:05:41.813 25fc Level-0 table #138: 232738 bytes OK
+2025/02/23-10:05:41.816 25fc Delete type=0 #132
+2025/02/23-10:05:41.816 25fc Manual compaction at level-0 from '\x00(\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00)\x00\x00\x00' @ 0 : 0; will stop at (end)
+2025/02/23-10:05:44.443 25fc Compacting 1@1 + 2@2 files
+2025/02/23-10:05:45.280 25fc Generated table #139@1: 52639 keys, 2217340 bytes
+2025/02/23-10:05:45.536 25fc Generated table #140@1: 17069 keys, 746532 bytes
+2025/02/23-10:05:45.537 25fc Compacted 1@1 + 2@2 files => 2963872 bytes
+2025/02/23-10:05:45.607 25fc compacted to: files[ 0 0 2 0 0 0 0 ]
+2025/02/23-10:05:45.609 25fc Delete type=2 #134
+2025/02/23-10:05:45.609 25fc Delete type=2 #135
+2025/02/23-10:05:45.609 25fc Delete type=2 #138
