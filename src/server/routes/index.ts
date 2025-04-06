@@ -33,8 +33,10 @@ route.post('/createSubscription', async  (req, res) => {
 
 route.get('/store/:session', async (req, res) => {
     const {session} = req.params
-    const data = await db.collection('db').doc(session).collection('store').get()
-    const store = data.docs.map(doc => doc.data())
+    const data = await db.collection(session).doc('store').get()
+    
+    const store = data.data()
+    console.log(store)
     res.json(store)
 })
 

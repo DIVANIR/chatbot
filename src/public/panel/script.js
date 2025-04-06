@@ -283,7 +283,7 @@ const readStore = async (user) => {
     }
 
     const response = await fetch('/store/'+user.id)
-    const storeData = (await response.json())[0]?.store
+    const storeData = await response.json()
     if (storeData) {
         fullSetting(storeData)
         localStorage.setItem('store', JSON.stringify(storeData))
