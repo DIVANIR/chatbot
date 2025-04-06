@@ -37,7 +37,14 @@ const usersMessages: {
 
 
 const Chat = async (session: string, store: Store, statusFind?: StatusFind, catchQR?: CatchQR) => {
-    const client = await create({ session, statusFind, catchQR, browserArgs: ['--headless=new'] })
+    const client = await create({ session, statusFind, catchQR, browserArgs: ['--headless=new', '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--disable-dev-shm-usage',
+    '--disable-accelerated-2d-canvas',
+    '--no-first-run',
+    '--no-zygote',
+    '--single-process',
+    '--disable-gpu'] })
 
     /*setInterval(()=>{
         client.sendText('553197304304@c.us',"Oi")
