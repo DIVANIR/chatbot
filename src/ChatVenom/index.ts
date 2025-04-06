@@ -1,7 +1,7 @@
 import { CatchQR, create, Message, StatusFind, Whatsapp } from 'venom-bot'
-import { typeMessages, CreateChatWithIA } from '../openai/index.js';
-import { save_order } from '../data/orders.js';
-import { Store } from '../server/server.js';
+import { typeMessages, CreateChatWithIA } from '../openai/index';
+import { save_order } from '../data/orders';
+import { Store } from '../server/server';
 
 
 const usersMessages: {

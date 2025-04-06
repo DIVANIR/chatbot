@@ -1,5 +1,4 @@
 import express from 'express'
-import compression from 'compression'
 import { route } from './routes'
 import http from 'http'
 import { Server, Socket } from 'socket.io'
@@ -12,7 +11,6 @@ import { save_store } from '../data/store'
 const app = express()
 const server = http.createServer(app)
 const io = new Server(server)
-app.use(compression())
 app.use(express.json())
 app.use(route)
 app.use(express.static("src/public"))
