@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  chatbot:
+    image: node:22
+    container_name: chatbot
+    restart: unless-stopped
+    working_dir: /app
+    volumes:
+      - ./:/app
+      - /etc/letsencrypt:/etc/letsencrypt:ro
+    ports:
+      - "3000:3000"
+      - "443:443"  # Só necessário se seu Node.js servir HTTPS diretamente
+    environment:
+      - NODE_ENV=production
+      - SSL_CERT=/etc/letsencrypt/live/srv788396.hstgr.cloud/fullchain.pem
+      - SSL_KEY=/etc/letsencrypt/live/srv788396.hstgr.cloud/privkey.pem
+    command: sh -c "npm install && npm run build && npm start"
+    networks:
+      - web
+  
+  certbot:
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/lib/letsencrypt:/var/lib/letsencrypt
+    command: certonly --webroot --webroot-path=/var/www/html --email seu@email.com --agree-tos --no-eff-email -d srv788396.hstgr.cloud --keep-until-expiring
+    networks:
+      - web
+
+networks:
+  web:
+    driver: bridge
