@@ -1,15 +1,12 @@
 import express from 'express'
 import { route } from './routes'
-import http from 'https'
+import http from 'http'
 import { Server, Socket } from 'socket.io'
 import { Chat } from '../ChatVenom'
 import { IOrder, allOrders, myOrders, save_order } from '../data/orders'
 import { addObserver, removeObserver } from '../utils/observers'
 import { Whatsapp } from 'venom-bot'
 import { save_store } from '../data/store'
-import fs from 'fs'
-
-
 
 const app = express()
 const server = http.createServer( app)
@@ -30,8 +27,6 @@ export type Store = {
 }
 
 const sessions = new Map<string, { sessionName: string, store:Store, chat?: Whatsapp}>()
-
-
 
 io.on("connection", client => {
     client.on("toConnect", async ({store, sessionName}:{store:Store, sessionName:string}) => {
